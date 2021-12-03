@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://font/NotoSerifCJKjp-Medium.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://script/start.gd" type="Script" id=2]
+[ext_resource path="res://EnterInfo.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 189.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Simple Mahjong Timer
+By XGN from HHS 2021"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 237.993
+margin_top = 367.0
+margin_right = 802.993
+margin_bottom = 555.0
+custom_fonts/font = SubResource( 2 )
+text = "Start Round!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p1" parent="." instance=ExtResource( 3 )]
+margin_top = 189.0
+margin_bottom = -387.0
+text = "Player Names (Comma-Separated)"
+initVal = "A,B,C,D"
+
+[node name="p2" parent="." instance=ExtResource( 3 )]
+margin_top = 213.0
+margin_bottom = -363.0
+text = "Initial Score"
+initVal = "25000"
+
+[node name="p3" parent="." instance=ExtResource( 3 )]
+margin_top = 237.0
+margin_bottom = -339.0
+text = "Think Time"
+initVal = "5"
+
+[node name="p4" parent="." instance=ExtResource( 3 )]
+margin_top = 261.0
+margin_bottom = -315.0
+text = "Extra Think Time"
+initVal = "20"
+
+[node name="p5" parent="." instance=ExtResource( 3 )]
+margin_top = 285.0
+margin_bottom = -291.0
+text = "Time For Chii,Pon,Kan"
+initVal = "8"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
