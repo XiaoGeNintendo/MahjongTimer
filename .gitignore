@@ -10,3 +10,4 @@ export_presets.cfg
 out
 out_html5
 *.zip
+*.7z
