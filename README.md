@@ -17,8 +17,6 @@ A simple timer and broadcasting tool for offline japanese mahjong
 - 下载[Windows版](https://github.com/XiaoGeNintendo/MahjongTimer/releases)
 - 使用[在线版](https://xiaogenintendo.github.io/MahjongTimer/)
 
-# 开源？
-以后再说 :P
 
 # 特色
 - 支持三麻，四麻甚至五人六人……（？）
