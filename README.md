@@ -14,7 +14,7 @@ A simple timer and broadcasting tool for offline japanese mahjong
 ![image](https://user-images.githubusercontent.com/34835642/144620978-ccda5659-bffc-4ca2-a762-2e75d85259fa.png)
 
 # 安装
-- 下载[Windows版](https://github.com/XiaoGeNintendo/MahjongTimer/releases)
+- 推荐：下载[Windows版](https://github.com/XiaoGeNintendo/MahjongTimer/releases)
 - 使用[在线版](https://xiaogenintendo.github.io/MahjongTimer/)
 
 
