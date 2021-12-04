@@ -73,11 +73,11 @@ func _ready():
 			$Tween.interpolate_property(sub,"rect_position",
 			Vector2(0,-500),Vector2(12,185),1,
 			Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
-			sub.rect_scale=Vector2(2,2)
 		else:
 			$Tween.interpolate_property(sub,"rect_position",
 			Vector2(0,-500),Vector2(x,470),1,
 			Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
+			sub.rect_scale=Vector2(0.5,0.5)
 			
 			x+=150
 		add_child(sub)

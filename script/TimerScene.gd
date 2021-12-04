@@ -121,14 +121,14 @@ func inter(now,x,y,s):
 	Tween.TRANS_CIRC,Tween.EASE_IN_OUT)
 func place(now):
 	
-	inter(now,nowX,nowY,2)
+	inter(now,nowX,nowY,1)
 	
 	var x=0
 	for i in range(now+1,len(subs)):
-		inter(i,x,0,1)
+		inter(i,x,0,0.5)
 		x+=150
 	for i in range(now):
-		inter(i,x,0,1)
+		inter(i,x,0,0.5)
 		x+=150
 	tween.start()
 	

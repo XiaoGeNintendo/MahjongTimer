@@ -23,11 +23,17 @@ _global_script_class_icons={
 config/name="MahjongTimer"
 config/description="A simple mahjong timer"
 run/main_scene="res://Start.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://hhs.png"
+config/icon="res://hhs.png"
 
 [autoload]
 
 Global="*res://script/Global.gd"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
