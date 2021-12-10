@@ -66,6 +66,32 @@ func _input(event):
 			$eattimer.visible=true
 			$eat.visible=true
 	
+	if event.is_action_pressed("riichi") and not eating:
+		if getCurrentPlayer().riichi==0:
+			getCurrentPlayer().point-=glb.riichiCost
+			getCurrentPlayer().riichi=1
+			se("riichi")
+		else:
+			if getCurrentPlayer().riichi==1:
+				getCurrentPlayer().point+=glb.riichiCost
+			else:
+				getCurrentPlayer().point+=glb.wRiichiCost
+			getCurrentPlayer().riichi=0
+		subs[now].refresh()
+	
+	if event.is_action_pressed("w_riichi") and not eating:
+		if getCurrentPlayer().riichi==0:
+			getCurrentPlayer().point-=glb.wRiichiCost
+			getCurrentPlayer().riichi=2
+			se("Wriichi")
+		else:
+			if getCurrentPlayer().riichi==1:
+				getCurrentPlayer().point+=glb.riichiCost
+			else:
+				getCurrentPlayer().point+=glb.wRiichiCost
+			getCurrentPlayer().riichi=0
+		subs[now].refresh()
+		
 	for i in range(1,5):
 		if event.is_action_pressed("jump%d"%i):
 			now=(now+i)%len(glb.players)
@@ -100,6 +126,8 @@ func _ready():
 	
 	for i in glb.players:
 		i.leftExtraTime=glb.extraTime
+		i.riichi=0
+		
 	for i in range(len(glb.players)):
 		var sub=scene.instance()
 		sub.pId=i
@@ -180,7 +208,8 @@ func _on_LineEdit_text_entered(new_text):
 	if new_text.begins_with("bonus"):
 		var s=new_text.split(" ")
 		glb.players[int(s[1])-1].point+=int(s[2])
-		get_tree().change_scene("res://Timer.tscn")
+		subs[int(s[1])-1].refresh()
+		get_tree().paused=true
 		return
 		
 	if new_text.begins_with("reset"):

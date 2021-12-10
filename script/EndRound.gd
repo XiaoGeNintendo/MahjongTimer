@@ -16,6 +16,18 @@ func getName():
 		return "三倍満"
 	elif s[1]=="tm":
 		return "跳満"
+	elif s[1]=="2ym":
+		return "二倍役満"
+	elif s[1]=="3ym":
+		return "三倍役満"
+	elif s[1]=="4ym":
+		return "四倍役満"
+	elif s[1]=="5ym":
+		return "五倍役満"
+	elif s[1]=="6ym":
+		return "六倍役満"
+	elif s[1]=="6+ym":
+		return "六上役満"
 	elif s[0]=="ron":
 		return "栄和"
 	elif s[0]=="tsumo":
@@ -43,6 +55,8 @@ func i2(s):
 #ron voice score
 func _ready():
 	
+	$CPUParticles2D.visible="ym" in s[1]
+	
 	if s[1]!="-":
 		se(s[1])
 	elif s[0]=="ron":
@@ -57,29 +71,33 @@ func _ready():
 	Tween.TRANS_BOUNCE,Tween.EASE_OUT)
 	
 	if s[0]!="ryuu":
-		$Label.text=getName()+" "+str(i2(s[ronpId+2]))+"点"
+		$Label.text=getName()+" "+str(abs(i2(s[ronpId+2])))+"点"
 	else:
 		$Label.text=getName()
 	
 	#update score & create boxes
-	var x=0
+	var x1=12
+	var x2=12
+	
 	for i in range(len(glb.players)):
 		glb.players[i].point+=i2(s[i+2])
 		
 		var sub=scene.instance()
 		sub.pId=i
 		sub.delta=i2(s[i+2])
-		if i==ronpId:
+		if sub.delta>0:
 			$Tween.interpolate_property(sub,"rect_position",
-			Vector2(0,-500),Vector2(12,185),1,
+			Vector2(0,-500),Vector2(x1,185),1,
 			Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
+			
+			x1+=300
 		else:
 			$Tween.interpolate_property(sub,"rect_position",
-			Vector2(0,-500),Vector2(x,470),1,
+			Vector2(0,-500),Vector2(x2,470),1,
 			Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
 			sub.rect_scale=Vector2(0.5,0.5)
 			
-			x+=150
+			x2+=150
 		add_child(sub)
 	
 	$Tween.start()

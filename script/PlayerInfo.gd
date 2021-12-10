@@ -22,8 +22,10 @@ func comma_sep(number):
 
 const letter="東南西北白發中"
 
-func _ready():
-	var colors=[Color.red,Color.green,Color.yellow,Color.blue,Color.cyan,Color.aliceblue,Color.orange,Color.aqua,Color.beige]
+var colors=[Color.red,Color.green,Color.yellow,Color.blue,Color.cyan,Color.aliceblue,Color.orange,Color.aqua,Color.beige]
+
+func refresh():
+	
 	$HSeparator.get("custom_styles/separator").color=colors[pId%len(colors)]
 	$Label.text=p.name
 	$Label2.text=comma_sep(p.point)
@@ -39,3 +41,8 @@ func _ready():
 		$Label5.hide()
 	else:
 		$Label5.text="+"+comma_sep(delta)
+	$riichi.visible=p.riichi==1
+	$riichi2.visible=p.riichi==2
+	
+func _ready():
+	refresh()

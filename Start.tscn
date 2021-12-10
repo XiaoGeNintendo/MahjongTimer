@@ -73,4 +73,16 @@ margin_top = 285.0
 margin_bottom = -291.0
 text = "Time For Chii,Pon,Kan"
 initVal = "8"
+
+[node name="p6" parent="." instance=ExtResource( 3 )]
+margin_top = 309.0
+margin_bottom = -267.0
+text = "Riichi Cost"
+initVal = "1000"
+
+[node name="p7" parent="." instance=ExtResource( 3 )]
+margin_top = 333.0
+margin_bottom = -243.0
+text = "Double Riichi Cost"
+initVal = "2000"
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

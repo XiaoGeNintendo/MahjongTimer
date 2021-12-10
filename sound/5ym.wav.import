@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/5ym.wav-e1e33da46f63e7402bf955f780878350.sample"
+
+[deps]
+
+source_file="res://sound/5ym.wav"
+dest_files=[ "res://.import/5ym.wav-e1e33da46f63e7402bf955f780878350.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

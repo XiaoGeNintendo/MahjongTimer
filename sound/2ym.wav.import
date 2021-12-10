@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/2ym.wav-8464e93aed0c2f81a718cf30a8e1dce4.sample"
+
+[deps]
+
+source_file="res://sound/2ym.wav"
+dest_files=[ "res://.import/2ym.wav-8464e93aed0c2f81a718cf30a8e1dce4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

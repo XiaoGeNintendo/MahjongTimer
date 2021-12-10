@@ -15,7 +15,7 @@ A simple timer and broadcasting tool for offline japanese mahjong
 
 # 安装
 - 推荐：下载[Windows版](https://github.com/XiaoGeNintendo/MahjongTimer/releases)
-- 使用[在线版](https://xiaogenintendo.github.io/MahjongTimer/)
+- 不推荐：使用[在线版](https://xiaogenintendo.github.io/MahjongTimer/)
 
 
 # 特色
@@ -28,6 +28,7 @@ A simple timer and broadcasting tool for offline japanese mahjong
 - 点击命令输入框输入命令（会暂停计时）
 - <kbd>Tab</kbd>退出命令模式
 - <kbd>1</kbd> 将会立即切换到下家，<kbd>2</kbd> 将会立即切换到对家，<kbd>3</kbd> 将会立即切换到上家，<kbd>4</kbd> 将会立即切换到自己（？）可以用于鸣牌后
+- 【1.3版本】<kbd>R</kbd> （取消）立直当前玩家，<kbd>W</kbd> （取消）W立直当前玩家
 
 # 命令
 ```
@@ -60,7 +61,7 @@ reset
 ```
 bonus <玩家ID> <分数>
 ```
-给特定的玩家增加一定分数，并重开本场。1，2，3，4分别为当前的东南西北家。
+给特定的玩家增加一定分数，~~重开本场(1.3版本前)~~ 。1，2，3，4分别为当前的东南西北家。
 
 # 语音
 - `-` 标准
@@ -69,7 +70,8 @@ bonus <玩家ID> <分数>
 - `bm` 倍满
 - `sbm` 三倍满
 - `ym` 役满
-- 并不支持多倍役满 :3
+- `2ym`,`3ym`,`4ym`,`5ym`,`6ym` 多倍役满
+- `6+ym` 六倍以上役满（六上役满）
 
 # Godot License
 ```

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Wriichi.wav-94743ba2cb3866933c52abeb4885f86a.sample"
+
+[deps]
+
+source_file="res://sound/Wriichi.wav"
+dest_files=[ "res://.import/Wriichi.wav-94743ba2cb3866933c52abeb4885f86a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

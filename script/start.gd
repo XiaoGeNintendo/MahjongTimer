@@ -11,6 +11,9 @@ func _on_Button_pressed():
 	glb.thinkTime=$p3.getValue()
 	glb.extraTime=$p4.getValue()
 	glb.breakTime=$p5.getValue()
+	glb.riichiCost=$p6.getValue()
+	glb.wRiichiCost=$p7.getValue()
+	
 	for i in pln:
 		i.strip_edges()
 		var np=Player.new()

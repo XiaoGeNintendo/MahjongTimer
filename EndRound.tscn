@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://font/NotoSerifCJKjp-Medium.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlayerInfo.tscn" type="PackedScene" id=2]
@@ -8,6 +8,25 @@
 [sub_resource type="DynamicFont" id=1]
 size = 128
 font_data = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+lifetime_randomness = 0.14
+trail_divisor = 10
+emission_shape = 1
+emission_sphere_radius = 40.0
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 60.0
+gravity = Vector3( 0, 10, 0 )
+initial_velocity = 97.82
+initial_velocity_random = 0.03
+angular_velocity = 156.52
+angular_velocity_random = 0.12
+orbit_velocity = 0.0
+orbit_velocity_random = 0.1
+linear_accel = 21.74
+hue_variation = 0.2
+hue_variation_random = 1.0
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -55,3 +74,11 @@ margin_bottom = -41.6235
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
+[node name="CPUParticles2D" type="Particles2D" parent="."]
+position = Vector2( 516, 185 )
+amount = 10000
+lifetime = 2.0
+process_material = SubResource( 2 )
